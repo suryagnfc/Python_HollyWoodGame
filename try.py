@@ -8,8 +8,7 @@ noOfChances = 9
 randomNoList = []
 escapeTupple = ('\'',':',' ')
 
-def Welcome():
-
+def Welcome(): #this function is to continously welcome users and play the game.
     while True:
         print ('\nWelcome to HollyWood Game! \n \n Enter 1 to start the game. \n Enter 2 for Rules. \n Enter 3 to Exit.')
         userSelection = int(input())
@@ -24,8 +23,7 @@ def Welcome():
             break
 
         
-
-def setEnvironment():
+def setEnvironment(): #this functions initialises the variables, takes the movie and prepares movie name for the game.
     global movieName
     global orignalMovieNameList
     global gameMovieNameList
@@ -60,7 +58,7 @@ def setEnvironment():
     gameMovieNameString = ''.join(gameMovieNameList)
 
     
-def StartGame():
+def StartGame(): # this function has the logic to take input and inform user if input was correct or not.
     global noOfChances
     global movieName
     global orignalMovieNameList
@@ -109,14 +107,14 @@ def StartGame():
         print("Game Over!")
         print("Correct Movie Name was ->" + movieName)
             
-def getMovieName():
+def getMovieName(): # this function just returns the movie name randomnly
     return movies_list[random.randint(0,len(movies_list)-1)]
 
-def find(s, ch):
+def find(s, ch): # this function return a list with all the indexes at which ch is present in string s.
     return [i for i, ltr in enumerate(s) if ltr == ch]
 
 
-def ShowRules():
+def ShowRules(): #just to display the rules
     print('\nRules: ')
     print('Movies name will be displayed with come characters missing.')
     print('Guess the characters within 9 chances (Hollywood) and you win game')
@@ -137,4 +135,4 @@ movies_list = ('The Godfather','The Shawshank Redemption',
                'Cinema Paradiso')
 
 
-Welcome()
+Welcome() # starts the program execution.
